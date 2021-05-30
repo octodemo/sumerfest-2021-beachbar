@@ -3,7 +3,7 @@ name: Update JIRA using the PR Labels as an Interface
 
 on: 
   pull_request:
-    types: [ready_for_review]
+    types: [opened, reopened]
     
 jobs:
   jira-update:
@@ -42,4 +42,4 @@ jobs:
         uses: atlassian/gajira-transition@master
         with:
           issue: ${{steps.pr-title-jira-issue.outputs.issue}}
-          transition: "In Review"
+          transition: "In Progress"
