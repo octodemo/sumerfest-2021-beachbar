@@ -1,4 +1,6 @@
-# Welcome to the GitHub Beach Bar
+
+![](img/logo.png)
+
 
 Take a look to our cocktail menu
 
