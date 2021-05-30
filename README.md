@@ -1,11 +1,6 @@
-# Cocktail project
 
-## Virgin Mojito
+![](https://github.com/octodemo/sf-2021-tug/blob/main/docs/img/mona-summer.png?raw=true)
 
+## Welcome to the GitHub Beach Bar!
 
-## Virgin Mojito II
-
-
-## Virgin Mojito III
-
-## Virgin Mojito IV
+Come here to enjoy the summer and prepare your next coding vacations!
