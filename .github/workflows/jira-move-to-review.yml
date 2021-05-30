@@ -1,14 +1,14 @@
    
-name: Update JIRA using the PR Labels as an Interface
+name: Transition JIRA based on PR status
 
 on: 
   pull_request:
-    types: [ready_for_review]
+    types: [ready_for_review, closed]
     
 jobs:
+
   jira-update:
     runs-on: ubuntu-latest
-    
     steps:
     
       - name: Jira Login
@@ -37,9 +37,18 @@ jobs:
         name: JIRA Ticket not found. Exiting
         run: exit 1
           
-      - name: Transition Issue
-        id: jira-issue-transition
+      - name: Transition to Review
+        if: github.event.pull_request.ready_for_review == true
+        id: jira-issue-to-review
         uses: atlassian/gajira-transition@master
         with:
           issue: ${{steps.pr-title-jira-issue.outputs.issue}}
           transition: "In Review"
+
+      - name: Transition to Review
+        if: github.event.pull_request.merged == true
+        id: jira-issue-to-done
+        uses: atlassian/gajira-transition@master
+        with:
+          issue: ${{steps.pr-title-jira-issue.outputs.issue}}
+          transition: "Done"
