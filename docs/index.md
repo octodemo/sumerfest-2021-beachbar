@@ -2,7 +2,7 @@
 ![](img/logo.png)
 
 
-# Take a look to our cocktail menu
+# Take a look to our cocktails
 
 ---
 
@@ -22,6 +22,8 @@ Avion silver, St. Germain, Orgeat, Citrus
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Mai_Tai_Trader_Vics_Emeryville.jpg/220px-Mai_Tai_Trader_Vics_Emeryville.jpg)
 
 
+
+----
 
 
 
