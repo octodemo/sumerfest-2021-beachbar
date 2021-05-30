@@ -1,0 +1,45 @@
+   
+name: Update JIRA using the PR Labels as an Interface
+
+on: 
+  pull_request:
+    types: [ready_for_review]
+    
+jobs:
+  jira-update:
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+      - name: Jira Login
+        uses: atlassian/gajira-login@v2.0.0
+        env:
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+
+      - name: Find JIRA issue number from the PR Title
+        id: pr-title-jira-issue
+        uses: atlassian/gajira-find-issue-key@master
+        with:
+          string: ${{ github.event.pull_request.title }}
+          from: ""
+
+      - if: ${{ steps.pr-title-jira-issue.outputs.issue == ''}}
+        name: JIRA Ticket not found
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+                👋 Your PR Title seems to be missing a valid JIRA Issue ID. Please make sure your PR Title is edited to include it.
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - if: ${{ steps.pr-title-jira-issue.outputs.issue == ''}}
+        name: JIRA Ticket not found. Exiting
+        run: exit 1
+          
+      - name: Transition Issue
+        id: jira-issue-transition
+        uses: atlassian/gajira-transition@master
+        with:
+          issue: ${{steps.pr-title-jira-issue.outputs.issue}}
+          transition: "In Review"
