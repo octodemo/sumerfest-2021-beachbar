@@ -30,4 +30,7 @@ Avion silver, St. Germain, Orgeat, Citrus
 
 ---
 
-Contact informations: the email cocktail!
+Contact informations:
+
+* Email: cocktails@ghbb.drink
+* Phone: 555-333-5555
