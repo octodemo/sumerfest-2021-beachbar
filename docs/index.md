@@ -23,13 +23,11 @@ Avion silver, St. Germain, Orgeat, Citrus
 
 
 
-----
-
-
-
 
 ---
 
 ![](img/mona-summer.png)
 
 ---
+
+Contact informations: the email cocktail!
