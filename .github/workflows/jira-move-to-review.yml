@@ -1,4 +1,4 @@
-ame: Update JIRA using the PR Labels as an Interface
+name: Update JIRA using the PR Labels as an Interface
 
 on: 
   pull_request:
