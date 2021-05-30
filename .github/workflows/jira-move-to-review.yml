@@ -12,7 +12,8 @@ jobs:
     steps:
     
       - run: |
-         echo 'ready_for_review #${{ github.event.pull_request.ready_for_review }} (bool)'
+         echo 'ready_for_review ${{ github.event.pull_request.ready_for_review }} (bool)'
+         echo 'ready_for_review ${{ github.event.pull_request }} (bool)'
 
     
       - name: Jira Login
@@ -42,7 +43,7 @@ jobs:
         run: exit 1
           
       - name: Transition to Review
-        if: github.event.pull_request.ready_for_review == true
+        if: github.event.pull_request.ready_for_review == true || github.event.pull_request.review_requested == true
         id: jira-issue-to-review
         uses: atlassian/gajira-transition@master
         with:
