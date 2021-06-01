@@ -6,6 +6,14 @@
 
 ---
 
+## The Action Caipirinha
+
+Brazil's national cocktail, made with cachaça (sugarcane hard liquor), sugar, and lime.[2] The drink is prepared by mixing the fruit and the sugar together, then adding the liquor.
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/15-09-26-RalfR-WLC-0048.jpg/220px-15-09-26-RalfR-WLC-0048.jpg)
+
+---
+
 
 ## The Mona Margarita
 
